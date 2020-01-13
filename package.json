@@ -1,0 +1,85 @@
+{
+  "name": "crypto-messenger",
+  "author": "Al3dekev",
+  "description": "This is an app of encryption of simple messages to provide a little of privacy in a world that doesn't want it",
+  "version": "0.1.0",
+  "main": "launch.js",
+  "scripts": {
+    "ng": "ng",
+    "start": "npx ng serve",
+    "build": "npx ng build",
+    "test": "npx ng test",
+    "lint": "npx ng lint",
+    "e2e": "npx ng e2e",
+    "ElectronLaunch": "npx ng build --base-href ./ && npx electron .",
+    "Release": "npx ng build --base-href ./ && npx electron-builder build"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~7.0.0",
+    "@angular/cdk": "~8.2.3",
+    "@angular/common": "~7.0.0",
+    "@angular/compiler": "~7.0.0",
+    "@angular/core": "~7.0.0",
+    "@angular/forms": "~7.0.0",
+    "@angular/http": "~7.0.0",
+    "@angular/material": "^8.2.3",
+    "@angular/platform-browser": "~7.0.0",
+    "@angular/platform-browser-dynamic": "~7.0.0",
+    "@angular/router": "~7.0.0",
+    "core-js": "^2.5.4",
+    "hammerjs": "^2.0.8",
+    "ngx-electron": "^2.2.0",
+    "rxjs": "~6.3.3",
+    "zone.js": "~0.8.26"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.10.0",
+    "@angular/cli": "~7.0.4",
+    "@angular/compiler-cli": "~7.0.0",
+    "@angular/language-service": "~7.0.0",
+    "@types/jasmine": "~2.8.8",
+    "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
+    "codelyzer": "~4.5.0",
+    "electron": "7.0.0",
+    "electron-builder": "20.5.1",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~3.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~1.1.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.4.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.11.0",
+    "typescript": "~3.1.1"
+  },
+  "build": {
+    "appId": "com.al3dekev.CryptoMessenger",
+    "productName": "Crypto Messenger",
+    "directories": {
+      "output": "release/"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "portable",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "portable": {
+      "unicode": false,
+      "artifactName": "CryptoMessenger.exe"
+    },
+    "files": [
+      "dist/**/*",
+      "launch.js"
+    ]
+  }
+}
