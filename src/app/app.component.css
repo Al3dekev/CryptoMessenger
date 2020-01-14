@@ -1,0 +1,13 @@
+:host{
+  text-align:center;
+}
+
+.btnArea{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  height: 100%;
+}

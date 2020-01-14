@@ -1,23 +1,39 @@
-import { Component } from '@angular/core';
-import { ElectronService } from 'ngx-electron';
+import {Component} from '@angular/core';
+import {CryptionService} from "./services/cryption.service";
 
 @Component({
-  selector: 'app-root',
+  selector: 'app-main',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Crypto Messenger';
+  private _title;
 
-  versions = { node: '', chrome: '', electron: '' };
 
-  constructor(private _electronService: ElectronService) {
-    // Make sure that app is being executed inside of electron.
-    if (this._electronService.isElectronApp) {
-      // We have access to node process.
-      this.versions.node = this._electronService.process.versions.node;
-      this.versions.chrome = this._electronService.process.versions.chrome;
-      this.versions.electron = this._electronService.process.versions.electron;
-    }
+  constructor(private cs:CryptionService) {
+    this.title = 'Crypto Messenger';
+    this.cs.pageArea = 0;
   }
+
+
+
+  clickOnEncryption(){
+    console.log("you're in ENCRYPTION page");
+    this.cs.pageArea = 1;
+  }
+
+  clickOnDecryption(){
+    console.log("you're in DECRYPTION page");
+    this.cs.pageArea = 2;
+  }
+
+
+  get title(): string {
+    return this._title;
+  }
+
+  set title(value: string) {
+    this._title = value;
+  }
+
 }
