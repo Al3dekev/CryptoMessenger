@@ -3,12 +3,16 @@ import {CryptionService} from "./services/cryption.service";
 
 export class ShiftSystem{
 
+  private _pageProcess:string;
+  private _appTitle:string;
+
   constructor(private cs:CryptionService){
 
   }
 
   backToMainMenu(){
     this.cs.pageArea = 0;
+    this.appTitle = "Crypto Messenger";
 
   }
 
@@ -87,5 +91,19 @@ export class ShiftSystem{
   }
 
 
+  get pageProcess(): string {
+    return this._pageProcess;
+  }
 
+  set pageProcess(value: string) {
+    this._pageProcess = value;
+  }
+
+  get appTitle(): string {
+    return this._appTitle;
+  }
+
+  set appTitle(value: string) {
+    this._appTitle = value;
+  }
 }
