@@ -10,5 +10,13 @@
   align-items: center;
   align-content: center;
   height: 12%;
-  height: 12%;
+}
+
+.cryptionArea{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
 }

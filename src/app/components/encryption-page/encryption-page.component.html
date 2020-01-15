@@ -7,12 +7,13 @@
 </div>
 <div class="cryptionArea">
   <div class="firstText">
-        <mat-label>
-          <label>
-            Insert your text here:
-            <textarea matInput placeholder="{{this.pageProcess}} Area"></textarea>
-          </label>
-        </mat-label>
+    <mat-form-field>
+      <mat-label>Insert your text here: </mat-label>
+        <textarea matInput cdkTextareaAutosize
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="5"
+                  placeholder="{{this.pageProcess}} Area"></textarea>
+    </mat-form-field>
   </div>
   <!--Arrow Area-->
   <div>
@@ -20,11 +21,14 @@
     <div>-----------></div>
   </div>
   <div class="secondText">
-    <mat-label>
+    <mat-form-field>
       <label>
-        <textarea matInput placeholder="Result Text"></textarea>
+        <textarea matInput cdkTextareaAutosize
+                  cdkAutosizeMinRows="1"
+                  cdkAutosizeMaxRows="5"
+                  placeholder="Result Text"></textarea>
       </label>
-    </mat-label>
+    </mat-form-field>
   </div>
 </div>
 
