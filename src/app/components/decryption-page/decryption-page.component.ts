@@ -11,6 +11,7 @@ export class DecryptionPageComponent extends ShiftSystem implements OnInit {
 
   constructor(cs:CryptionService) {
     super(cs);
+    this.pageProcess = "Decryption";
   }
 
   ngOnInit() {

@@ -1,4 +1,32 @@
-<p>
-  encryption-page works!
-</p>
-<button mat-raised-button (click)="backToMainMenu()">Back Button</button>
+<div class="upperPanel">
+  <button mat-raised-button (click)="backToMainMenu()">Back Button</button>
+  <h3>{{this.appTitle}}</h3>
+</div>
+<div>
+  <h1>{{this.pageProcess}}<br>System</h1>
+</div>
+<div class="cryptionArea">
+  <div class="firstText">
+        <mat-label>
+          <label>
+            Insert your text here:
+            <textarea matInput placeholder="{{this.pageProcess}} Area"></textarea>
+          </label>
+        </mat-label>
+  </div>
+  <!--Arrow Area-->
+  <div>
+    <div>{{this.pageProcess}}</div>
+    <div>-----------></div>
+  </div>
+  <div class="secondText">
+    <mat-label>
+      <label>
+        <textarea matInput placeholder="Result Text"></textarea>
+      </label>
+    </mat-label>
+  </div>
+</div>
+
+
+
