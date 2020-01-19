@@ -10,10 +10,13 @@ function createWindow () {
     autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true
-    }
+    },
   });
+  win.setResizable(false);
+  win.isFullScreenable(false);
+
   // Dev mode only
-  win.webContents.openDevTools();
+  //win.webContents.openDevTools();
 
   // and load the index.html of the app.
   win.loadURL(url.format({
@@ -21,7 +24,6 @@ function createWindow () {
     slashes: true,
     pathname: `${__dirname}/dist/CryptoMessenger/index.html`
   }));
-
 }
 
 app.on('ready', createWindow);
