@@ -10,6 +10,7 @@ import {DecryptionPageComponent} from "./components/decryption-page/decryption-p
 import {CryptionService} from "./services/cryption.service";
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatInputModule} from "@angular/material/input";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,14 +18,15 @@ import {MatInputModule} from "@angular/material/input";
     EncryptionPageComponent,
     DecryptionPageComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    NgxElectronModule,
-    MatButtonModule,
-    MatFormFieldModule,
-    MatInputModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        NgxElectronModule,
+        MatButtonModule,
+        MatFormFieldModule,
+        MatInputModule,
+        FormsModule
+    ],
   providers: [
     CryptionService
   ],
