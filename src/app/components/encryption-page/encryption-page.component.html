@@ -16,7 +16,6 @@
                   placeholder="{{this.pageProcess}} Area"
                   [(ngModel)]="this.inputText"></textarea>
     </mat-form-field>
-    <!--<div>Example: {{this.inputText.length}}</div>-->
   </div>
   <!--Arrow Area-->
   <div>
@@ -30,7 +29,7 @@
                   disabled="disabled"
                   cdkAutosizeMinRows="3"
                   cdkAutosizeMaxRows="5"
-                  placeholder="Result Text" [value]="this.EncryptingData(this.inputText, 3)"></textarea>
+                  placeholder="Result Text" [value]="this.EncryptingData(this.inputText, this.cryptingSize)"></textarea>
       </label>
     </mat-form-field>
   </div>
