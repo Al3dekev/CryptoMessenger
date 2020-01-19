@@ -7,13 +7,13 @@ function createWindow () {
   win = new BrowserWindow({
     width: 800,
     height: 600,
-    autoHideMenuBar: true,
     webPreferences: {
       nodeIntegration: true
     },
   });
-  win.setResizable(false);
-  win.isFullScreenable(false);
+  win.resizable = false;
+  win.fullScreenable = false;
+  win.autoHideMenuBar =  true;
 
   // Dev mode only
   //win.webContents.openDevTools();
