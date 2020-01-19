@@ -1,5 +1,4 @@
 import {CryptionService} from "./services/cryption.service";
-import {ElementRef, ViewChild} from "@angular/core";
 
 
 export class ShiftSystem{
@@ -7,11 +6,11 @@ export class ShiftSystem{
   private _pageProcess:string;
   private _appTitle:string;
   private _inputText:string;
-  private _outputText:string;
-  //@ViewChild("outputTextArea", {static:false}) private outputTextArea:ElementRef;
+  private _cryptingSize:number;
 
   constructor(private cs:CryptionService){
     this.inputText = "";
+    this.cryptingSize = 5;
   }
 
   backToMainMenu(){
@@ -124,11 +123,11 @@ export class ShiftSystem{
     this._inputText = value;
   }
 
-  get outputText(): string {
-    return this._outputText;
+  get cryptingSize(): number {
+    return this._cryptingSize;
   }
 
-  set outputText(value: string) {
-    this._outputText = value;
+  set cryptingSize(value: number) {
+    this._cryptingSize = value;
   }
 }
