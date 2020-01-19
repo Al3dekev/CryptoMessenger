@@ -9,14 +9,13 @@ export class ShiftSystem{
   private _cryptingSize:number;
 
   constructor(private cs:CryptionService){
+    this.appTitle = "Crypto Messenger";
     this.inputText = "";
     this.cryptingSize = 5;
   }
 
   backToMainMenu(){
     this.cs.pageArea = 0;
-    this.appTitle = "Crypto Messenger";
-
   }
 
 
