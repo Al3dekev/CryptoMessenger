@@ -20,3 +20,11 @@
   align-items: center;
   align-content: center;
 }
+
+.arrow{
+  pointer-events: none;
+}
+
+.secondText textarea{
+  user-select: none;
+}

@@ -9,17 +9,10 @@ import {ShiftSystem} from "../../ShiftSystem";
 })
 export class EncryptionPageComponent extends ShiftSystem implements OnInit {
 
-
-
-
-
   constructor(cs:CryptionService) {
     super(cs);
     this.pageProcess = "Encryption";
   }
-
-
-
 
   ngOnInit() {
   }

@@ -9,24 +9,28 @@
   <div class="firstText">
     <mat-form-field>
       <mat-label>Insert your text here: </mat-label>
-        <textarea matInput cdkTextareaAutosize
-                  cdkAutosizeMinRows="1"
+        <textarea #inputAreaText
+                  matInput cdkTextareaAutosize
+                  cdkAutosizeMinRows="3"
                   cdkAutosizeMaxRows="5"
-                  placeholder="{{this.pageProcess}} Area"></textarea>
+                  placeholder="{{this.pageProcess}} Area"
+                  [(ngModel)]="this.inputText"></textarea>
     </mat-form-field>
+    <!--<div>Example: {{this.inputText.length}}</div>-->
   </div>
   <!--Arrow Area-->
   <div>
     <div>{{this.pageProcess}}</div>
-    <div>-----------></div>
+    <div class="arrow">-----------></div>
   </div>
   <div class="secondText">
     <mat-form-field>
       <label>
-        <textarea matInput cdkTextareaAutosize
-                  cdkAutosizeMinRows="1"
+        <textarea #outputTextArea matInput cdkTextareaAutosize
+                  disabled="disabled"
+                  cdkAutosizeMinRows="3"
                   cdkAutosizeMaxRows="5"
-                  placeholder="Result Text"></textarea>
+                  placeholder="Result Text" [value]="this.EncryptingData(this.inputText, 3)"></textarea>
       </label>
     </mat-form-field>
   </div>
