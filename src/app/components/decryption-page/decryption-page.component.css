@@ -1,0 +1,30 @@
+:host{
+
+}
+
+.upperPanel{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  height: 12%;
+}
+
+.cryptionArea{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.arrow{
+  pointer-events: none;
+}
+
+.secondText textarea{
+  user-select: none;
+}
