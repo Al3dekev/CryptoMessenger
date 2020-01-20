@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CryptionService} from "../../services/cryption.service";
 import {ShiftSystem} from "../../ShiftSystem";
+import {ElectronService} from "ngx-electron";
 
 @Component({
   selector: 'app-encryption-page',
@@ -9,8 +10,8 @@ import {ShiftSystem} from "../../ShiftSystem";
 })
 export class EncryptionPageComponent extends ShiftSystem implements OnInit {
 
-  constructor(cs:CryptionService) {
-    super(cs);
+  constructor(cs:CryptionService, es: ElectronService) {
+    super(cs, es);
     this.pageProcess = "Encryption";
   }
 
