@@ -1,4 +1,4 @@
-import {CryptionService} from "./services/cryption.service";
+import {CryptionService} from './services/cryption.service';
 import {ElementRef, ViewChild} from '@angular/core';
 
 
