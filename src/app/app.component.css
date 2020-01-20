@@ -28,5 +28,9 @@
   justify-content: center ;
   align-items: center ;
   align-content: center ;
-  height: 30%;
+  height: 50%;
+}
+
+.UpperBlock img{
+  width: 100px;
 }
