@@ -1,5 +1,5 @@
 import {CryptionService} from './services/cryption.service';
-import {ElementRef, ViewChild} from '@angular/core';
+import {ElectronService} from "ngx-electron";
 
 
 export class ShiftSystem {
@@ -8,10 +8,11 @@ export class ShiftSystem {
   private _appTitle: string;
   private _inputText: string;
   private _cryptingSize: number;
-  // @ViewChild('outputTextArea', {static: false}) outputTextArea: ElementRef;
+  private _appLogoLink: any;
 
-  constructor(private cs: CryptionService) {
+  constructor(private cs: CryptionService, private es: ElectronService) {
     this.appTitle = 'Crypto Messenger';
+    this.appLogoLink = "assets/icon.png";
     this.inputText = '';
     this.cryptingSize = 5;
   }
@@ -106,6 +107,10 @@ export class ShiftSystem {
     inputElement.disabled = true;
   }
 
+  quitApp(){
+    this.es.ipcRenderer.send('close-app');
+  }
+
 
   get pageProcess(): string {
     return this._pageProcess;
@@ -138,5 +143,14 @@ export class ShiftSystem {
 
   set cryptingSize(value: number) {
     this._cryptingSize = value;
+  }
+
+
+  get appLogoLink(): any {
+    return this._appLogoLink;
+  }
+
+  set appLogoLink(value: any) {
+    this._appLogoLink = value;
   }
 }
