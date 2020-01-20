@@ -8,7 +8,7 @@ export class ShiftSystem {
   private _appTitle: string;
   private _inputText: string;
   private _cryptingSize: number;
-  @ViewChild('outputTextArea', {static: false}) outputTextArea: ElementRef;
+  // @ViewChild('outputTextArea', {static: false}) outputTextArea: ElementRef;
 
   constructor(private cs: CryptionService) {
     this.appTitle = 'Crypto Messenger';
@@ -45,7 +45,7 @@ export class ShiftSystem {
             letter = String.fromCharCode(codeASCII + decal);
           }
         } else if ((codeASCII >= 97) && (codeASCII <= 122)) { // Minuscule
-          if ((codeASCII + decal) > 122){
+          if ((codeASCII + decal) > 122) {
             letter = String.fromCharCode((97 + ((codeASCII + decal) - 122)) - 1);
           } else {
             letter = String.fromCharCode(codeASCII + decal);
@@ -98,10 +98,12 @@ export class ShiftSystem {
     return strDecoded;
   }
 
-  copyInputText(inputElement) {
+  copyTextToClipboard(inputElement) {
+    inputElement.disabled = false;
     inputElement.select();
     document.execCommand('copy');
     inputElement.setSelectionRange(0, 0);
+    inputElement.disabled = true;
   }
 
 
