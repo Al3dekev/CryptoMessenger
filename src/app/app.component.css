@@ -18,6 +18,11 @@
   height: 50%;
 }
 
+.UpperBlock img{
+  width: 100px;
+}
+
+
 .LowerBlock{
   display: flex;
   flex-direction: row;
@@ -32,6 +37,9 @@
 }
 
 
-.UpperBlock img{
-  width: 100px;
+.author{
+  display: flex;
+  font-size: 10px;
+  justify-content: flex-end;
+  margin: 0 3% 0 3%;
 }
