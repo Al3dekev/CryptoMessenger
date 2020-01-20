@@ -22,13 +22,18 @@
 }
 
 .cryptionArea{
-  display: flex;
+  //display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   align-content: flex-start;
   height: 58%;
+
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-template-rows: 200px;
+  grid-column-gap: 15px;
 }
 
 .arrow{

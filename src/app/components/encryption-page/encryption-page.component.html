@@ -11,27 +11,26 @@
       <mat-label>Insert your text here: </mat-label>
         <textarea #inputAreaText
                   matInput cdkTextareaAutosize
-                  cdkAutosizeMinRows="3"
+                  cdkAutosizeMinRows="5"
                   cdkAutosizeMaxRows="5"
                   placeholder="{{this.pageProcess}} Area"
                   [(ngModel)]="this.inputText"></textarea>
     </mat-form-field>
   </div>
   <!--Arrow Area-->
-  <div>
+  <!--<div>
     <div>{{this.pageProcess}}</div>
-    <div class="arrow">-----------></div>
-  </div>
+    <div class="arrow">arrow</div>
+  </div>-->
   <div class="secondText">
     <mat-form-field>
       <label></label>
       <textarea #outputTextArea matInput cdkTextareaAutosize
-                disabled="disabled"
-                cdkAutosizeMinRows="3"
+                cdkAutosizeMinRows="5"
                 cdkAutosizeMaxRows="5"
-                placeholder="Result Text" [value]="this.EncryptingData(this.inputText, this.cryptingSize)"></textarea>
+                placeholder="Result Text" [value]="this.EncryptingData(this.inputText, this.cryptingSize)" disabled></textarea>
     </mat-form-field>
-    <button *ngIf="this.inputText != ''" (click)="this.copyInputText(valueOf())" value="click to copy" >Copy from Textbox</button>
+    <button *ngIf="this.inputText != ''" (click)="this.copyTextToClipboard(outputTextArea)" value="click to copy" >Copy from Textbox</button>
   </div>
 </div>
 
