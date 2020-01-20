@@ -1,8 +1,11 @@
 <div class="upperPanel">
   <button mat-raised-button (click)="backToMainMenu()">Back Button</button>
-  <h3>{{this.appTitle}}</h3>
+  <div class="titleUpperPanel">
+    <img src="{{this.appLogoLink}}">
+    <h3>{{this.appTitle}}</h3>
+  </div>
 </div>
-<div>
+<div class="middlePanel">
   <h1>{{this.pageProcess}}<br>System</h1>
 </div>
 <div class="cryptionArea">
@@ -11,28 +14,30 @@
       <mat-label>Insert your text here: </mat-label>
       <textarea #inputAreaText
                 matInput cdkTextareaAutosize
-                cdkAutosizeMinRows="3"
+                cdkAutosizeMinRows="5"
                 cdkAutosizeMaxRows="5"
                 placeholder="{{this.pageProcess}} Area"
                 [(ngModel)]="this.inputText"></textarea>
     </mat-form-field>
   </div>
   <!--Arrow Area-->
-  <div>
+  <!--<div>
     <div>{{this.pageProcess}}</div>
-    <div class="arrow">-----------></div>
-  </div>
+    <div class="arrow">arrow</div>
+  </div>-->
   <div class="secondText">
     <mat-form-field>
-      <label>
-        <textarea #outputTextArea matInput cdkTextareaAutosize
-                  disabled="disabled"
-                  cdkAutosizeMinRows="3"
-                  cdkAutosizeMaxRows="5"
-                  placeholder="Result Text" [value]="this.DecryptingData(this.inputText, this.cryptingSize)"></textarea>
-      </label>
+      <label></label>
+      <textarea #outputTextArea matInput cdkTextareaAutosize
+                cdkAutosizeMinRows="5"
+                cdkAutosizeMaxRows="5"
+                placeholder="Result Text" [value]="this.DecryptingData(this.inputText, this.cryptingSize)" disabled></textarea>
     </mat-form-field>
   </div>
+</div>
+<div class="lowerPanel">
+  <button mat-raised-button *ngIf="this.inputText != ''" (click)="this.copyTextToClipboard(outputTextArea)" value="click to copy" >Copy to clipboard</button>
+  <button mat-raised-button (click)="this.quitApp()">Quit App</button>
 </div>
 
 
