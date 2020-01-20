@@ -22,18 +22,19 @@
 }
 
 .cryptionArea{
-  //display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+
+  justify-content: space-evenly;
   align-items: center;
-  align-content: flex-start;
-  height: 58%;
+  height: 43%;
 
   display: grid;
   grid-template-columns: auto auto;
   grid-template-rows: 200px;
   grid-column-gap: 15px;
+}
+
+mat-form-field{
+  width: 250px;
 }
 
 .arrow{
@@ -42,4 +43,14 @@
 
 .secondText textarea{
   user-select: none;
+}
+
+.lowerPanel{
+  display: flex ;
+  flex-direction: row ;
+  flex-wrap: wrap ;
+  justify-content: center ;
+  align-items: center ;
+  align-content: center ;
+  height: 15%;
 }
