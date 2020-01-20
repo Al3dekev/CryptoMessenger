@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const url = require('url');
 
@@ -7,7 +7,7 @@ function createWindow () {
   win = new BrowserWindow({
     width: 800,
     height: 600,
-    icon: __dirname + '/icon.png',
+    icon: __dirname + '/src/assets/icon.png',
     webPreferences: {
       nodeIntegration: true
     },
@@ -17,7 +17,7 @@ function createWindow () {
   win.autoHideMenuBar =  true;
 
   // Dev mode only
-  //win.webContents.openDevTools();
+  win.webContents.openDevTools();
 
   // and load the index.html of the app.
   win.loadURL(url.format({
@@ -34,6 +34,11 @@ app.on('window-all-closed', () => {
     app.quit();
   }
 });
+
+ipcMain.on('close-app', () => {
+  app.quit()
+});
+
 
 app.on('activate', () => {
   if (win === null) {
