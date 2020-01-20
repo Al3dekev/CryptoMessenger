@@ -24,14 +24,14 @@
   </div>
   <div class="secondText">
     <mat-form-field>
-      <label>
-        <textarea #outputTextArea matInput cdkTextareaAutosize
-                  disabled="disabled"
-                  cdkAutosizeMinRows="3"
-                  cdkAutosizeMaxRows="5"
-                  placeholder="Result Text" [value]="this.EncryptingData(this.inputText, this.cryptingSize)"></textarea>
-      </label>
+      <label></label>
+      <textarea #outputTextArea matInput cdkTextareaAutosize
+                disabled="disabled"
+                cdkAutosizeMinRows="3"
+                cdkAutosizeMaxRows="5"
+                placeholder="Result Text" [value]="this.EncryptingData(this.inputText, this.cryptingSize)"></textarea>
     </mat-form-field>
+    <button *ngIf="this.inputText != ''" (click)="this.copyInputText(valueOf())" value="click to copy" >Copy from Textbox</button>
   </div>
 </div>
 

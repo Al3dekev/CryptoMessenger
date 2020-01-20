@@ -1,55 +1,57 @@
 import {CryptionService} from "./services/cryption.service";
+import {ElementRef, ViewChild} from '@angular/core';
 
 
-export class ShiftSystem{
+export class ShiftSystem {
 
-  private _pageProcess:string;
-  private _appTitle:string;
-  private _inputText:string;
-  private _cryptingSize:number;
+  private _pageProcess: string;
+  private _appTitle: string;
+  private _inputText: string;
+  private _cryptingSize: number;
+  @ViewChild('outputTextArea', {static: false}) outputTextArea: ElementRef;
 
-  constructor(private cs:CryptionService){
-    this.appTitle = "Crypto Messenger";
-    this.inputText = "";
+  constructor(private cs: CryptionService) {
+    this.appTitle = 'Crypto Messenger';
+    this.inputText = '';
     this.cryptingSize = 5;
   }
 
-  backToMainMenu(){
+  backToMainMenu() {
     this.cs.pageArea = 0;
   }
 
 
-  EncryptingData(text:string, decal:number){
+  EncryptingData(text: string, decal: number) {
 
     let strEncoded = '';
     let letter = '';
     let codeASCII = 0;
     let i;
 
-    if(decal < 0){
+    if (decal < 0) {
       decal = decal + 26;
     }
 
-    if(text.length > 0){
-      for(i = 0; i < text.length; i++){
+    if (text.length > 0) {
+      for (i = 0; i < text.length; i++) {
 
         codeASCII = text[i].charCodeAt(0);
 
 
-        if ((codeASCII >= 65) && (codeASCII <= 90)){ //Majuscule
-          if ((codeASCII + decal) > 90){
-            letter = String.fromCharCode((65+((codeASCII+decal)-90))-1);
-          }else{
-            letter = String.fromCharCode(codeASCII+decal);
+        if ((codeASCII >= 65) && (codeASCII <= 90)) { // Majuscule
+          if ((codeASCII + decal) > 90) {
+            letter = String.fromCharCode((65 + ((codeASCII + decal) - 90 )) - 1);
+          } else {
+            letter = String.fromCharCode(codeASCII + decal);
           }
-        } else if((codeASCII >= 97) && (codeASCII <= 122)) { //Minuscule
+        } else if ((codeASCII >= 97) && (codeASCII <= 122)) { // Minuscule
           if ((codeASCII + decal) > 122){
-            letter = String.fromCharCode((97+((codeASCII+decal)-122))-1);
-          }else{
-            letter = String.fromCharCode(codeASCII+decal);
+            letter = String.fromCharCode((97 + ((codeASCII + decal) - 122)) - 1);
+          } else {
+            letter = String.fromCharCode(codeASCII + decal);
           }
-        }else{
-          letter = text[i]
+        } else {
+          letter = text[i];
         }
 
 
@@ -57,16 +59,16 @@ export class ShiftSystem{
 
       }
     }
-    return strEncoded
+    return strEncoded;
   }
 
-  DecryptingData(text:string, decal:number){
+  DecryptingData(text: string, decal: number) {
     let strDecoded = '';
     let letter = '';
     let codeASCII = 0;
     let i;
-    if(decal < 0){
-      decal = decal + 26
+    if (decal < 0) {
+      decal = decal + 26;
     }
 
     if (text.length > 0) {
@@ -88,12 +90,18 @@ export class ShiftSystem{
             letter = String.fromCharCode(codeASCII - decal);
           }
         } else {
-          letter = text[i]
+          letter = text[i];
         }
         strDecoded += letter;
       }
     }
-    return strDecoded
+    return strDecoded;
+  }
+
+  copyInputText(inputElement) {
+    inputElement.select();
+    document.execCommand('copy');
+    inputElement.setSelectionRange(0, 0);
   }
 
 
