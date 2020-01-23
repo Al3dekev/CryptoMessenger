@@ -43,9 +43,9 @@
   height: 43%;
 
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   grid-template-rows: 200px;
-  grid-column-gap: 15px;
+  /*grid-column-gap: 15px;*/
 }
 
 mat-form-field{
