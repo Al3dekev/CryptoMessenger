@@ -8,11 +8,13 @@ export class ShiftSystem {
   private _appTitle: string;
   private _inputText: string;
   private _cryptingSize: number;
-  private _appLogoLink: any;
+  private _appLogoLink: string;
+  private _arrowImgLink: string;
 
-  constructor(private cs: CryptionService, private es: ElectronService) {
+  constructor(private cs: CryptionService) {
     this.appTitle = 'Crypto Messenger';
     this.appLogoLink = "assets/icon.png";
+    this.arrowImgLink = "assets/arrows.png";
     this.inputText = '';
     this.cryptingSize = 5;
   }
@@ -107,9 +109,6 @@ export class ShiftSystem {
     inputElement.disabled = true;
   }
 
-  quitApp(){
-    this.es.ipcRenderer.send('close-app');
-  }
 
 
   get pageProcess(): string {
@@ -146,11 +145,19 @@ export class ShiftSystem {
   }
 
 
-  get appLogoLink(): any {
+  get appLogoLink(): string {
     return this._appLogoLink;
   }
 
-  set appLogoLink(value: any) {
+  set appLogoLink(value: string) {
     this._appLogoLink = value;
+  }
+
+  get arrowImgLink(): string {
+    return this._arrowImgLink;
+  }
+
+  set arrowImgLink(value: string) {
+    this._arrowImgLink = value;
   }
 }

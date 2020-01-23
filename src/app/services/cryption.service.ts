@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import {ElectronService} from 'ngx-electron';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,14 @@ export class CryptionService {
    * 2: Decryption Page
    *
    */
-  _pageArea:number;
+  _pageArea: number;
 
-  constructor() { }
+  constructor(private es: ElectronService) { }
+
+
+  quitApp() {
+    this.es.ipcRenderer.send('close-app');
+  }
 
 
 

@@ -4,14 +4,18 @@
     <h1>{{ title }}</h1>
     <h2>Property & Privacy today and tomorrow.</h2>
   </div>
-  <div class="LowerBlock">
+  <div class="MiddleBlock">
     <button mat-stroked-button (click)="this.clickOnEncryption()">Encryption</button>
     <button mat-stroked-button (click)="this.clickOnDecryption()">Decryption</button>
   </div>
 
   <div class="author">Made by <!--<a href="https://github.com/Al3dekev">--> Al3dekev<!--</a>--></div>
+
+  <div class="LowerBlock">
+    <button mat-raised-button (click)="this.cs.quitApp()">Quit App</button>
+  </div>
+
 </div>
 
 <app-encryption-page *ngIf="cs.pageArea == 1"></app-encryption-page>
 <app-decryption-page *ngIf="cs.pageArea == 2"></app-decryption-page>
-

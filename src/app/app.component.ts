@@ -10,7 +10,7 @@ export class AppComponent {
   private _title;
 
 
-  constructor(private cs:CryptionService) {
+  constructor(private cs: CryptionService) {
     this.title = 'Crypto Messenger';
     this.cs.pageArea = 0;
   }

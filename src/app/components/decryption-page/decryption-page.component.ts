@@ -10,8 +10,8 @@ import {ElectronService} from "ngx-electron";
 })
 export class DecryptionPageComponent extends ShiftSystem implements OnInit {
 
-  constructor(cs:CryptionService, es: ElectronService) {
-    super(cs, es);
+  constructor(cs: CryptionService) {
+    super(cs);
     this.pageProcess = "Decryption";
   }
 

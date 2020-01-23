@@ -23,7 +23,7 @@
 }
 
 
-.LowerBlock{
+.MiddleBlock{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -34,6 +34,10 @@
   background-color: #e0e0e0;
   border: #7d7d7d solid;
   border-width: 1px 0 1px 0;
+}
+
+.LowerBlock{
+  margin-top: 25px;
 }
 
 
