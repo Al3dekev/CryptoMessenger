@@ -12,4 +12,4 @@ With *CryptoMessenger*, you'll  be able to encrypt and decrypt messages easily. 
 
 ## Further help
 
-For more help and questions, you can go to 
+For more help and questions, you can go to the [CryptoMessenger's Github issue section](https://github.com/Al3dekev/CryptoMessenger/issues).
