@@ -21,7 +21,7 @@
     </mat-form-field>
   </div>
   <!--Arrow Area-->
-  <div>
+  <div class="arrow">
     <div>{{this.pageProcess}}</div>
     <img width="30px" src="{{ this.arrowImgLink }}">
   </div>
@@ -37,7 +37,7 @@
 </div>
 <div class="lowerPanel">
   <button mat-raised-button *ngIf="this.inputText != ''" (click)="this.copyTextToClipboard(outputTextArea)" value="click to copy" >Copy to clipboard</button>
-  <button mat-raised-button (click)="this.ns.quitApp()">Quit App</button>
+  <button mat-raised-button (click)="this.cs.quitApp()">Quit App</button>
 </div>
 
 
