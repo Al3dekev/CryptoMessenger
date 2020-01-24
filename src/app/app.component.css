@@ -20,6 +20,8 @@
 
 .UpperBlock img{
   width: 100px;
+  user-select: none;
+  pointer-events: none;
 }
 
 

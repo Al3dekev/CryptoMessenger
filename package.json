@@ -63,7 +63,7 @@
       "output": "release/"
     },
     "win": {
-      "icon": "dist/CryptoMessenger/assets/icon.png",
+      "icon": "dist/CryptoMessenger/assets/icon512.png",
       "target": [
         {
           "target": "portable",
