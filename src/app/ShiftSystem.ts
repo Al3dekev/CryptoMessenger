@@ -1,5 +1,4 @@
 import {CryptionService} from './services/cryption.service';
-import {ElectronService} from "ngx-electron";
 
 
 export class ShiftSystem {
@@ -13,8 +12,8 @@ export class ShiftSystem {
 
   constructor(private cs: CryptionService) {
     this.appTitle = 'Crypto Messenger';
-    this.appLogoLink = "assets/icon.png";
-    this.arrowImgLink = "assets/arrows.png";
+    this.appLogoLink = 'assets/icon256.png';
+    this.arrowImgLink = 'assets/arrows.png';
     this.inputText = '';
     this.cryptingSize = 5;
   }
