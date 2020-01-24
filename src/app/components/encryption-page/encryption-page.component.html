@@ -10,7 +10,7 @@
 </div>
 <div class="cryptionArea">
   <div class="firstText">
-    <mat-form-field>
+    <mat-form-field  appearance="outline">
       <mat-label>Insert your text here: </mat-label>
         <textarea #inputAreaText
                   matInput cdkTextareaAutosize
@@ -26,7 +26,7 @@
     <img width="30px" src="{{ this.arrowImgLink }}">
   </div>
   <div class="secondText">
-    <mat-form-field>
+    <mat-form-field  appearance="outline">
       <label></label>
       <textarea #outputTextArea matInput cdkTextareaAutosize
                 cdkAutosizeMinRows="5"
