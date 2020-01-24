@@ -2,7 +2,7 @@
   "name": "crypto-messenger",
   "author": "Al3dekev",
   "description": "This is an app of encryption of simple messages to provide a little of privacy in a world that doesn't want it",
-  "version": "1.0.10.20012020",
+  "version": "1.0.31.210120",
   "main": "launch.js",
   "scripts": {
     "ng": "ng",
